@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# 🎬 Movie Explorer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive Movie Explorer App built with React and Tailwind CSS. This application allows users to search, explore, and manage their favorite movies using data from a movie API on RapidAPI.
 
-Currently, two official plugins are available:
+## Live Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Hosted API: [https://movie-explorer-henna.vercel.app/](https://movie-explorer-henna.vercel.app/)
 
-## Expanding the ESLint configuration
+---
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Movie Search & Browse
+- Integrates with **IMDb API** or any free movie API from **RapidAPI**.
+- Browse a list of movies displaying the **title**, **poster**, **rating**, and **release year**.
+- Supports **search functionality** to find specific movies.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Infinite Scroll
+- Smooth client-side **pagination** or infinite scroll for seamless browsing.
+
+### Favorites Management
+- Mark and unmark movies as **favorites**.
+- Favorites are stored in **Local Storage** and accessible across sessions.
+- Dedicated **Favorites Page** to view all saved favorite movies.
+
+### Navigation
+- Built with **React Router** to navigate between the **Home** and **Favorites** pages.
+
+### Modern Styling
+- Designed using **Tailwind CSS** for a clean, responsive, and user-friendly interface.
+
+### Graceful Error & Loading States
+- User-friendly **loading animations** using Lottie.
+- Proper error handling with **toast notifications**.
+
+## Tech Stack
+
+- React (TypeScript)
+- Tailwind CSS
+- Axios (for API requests)
+- React Router DOM
+- React Context API + LocalStorage
+- RapidAPI (IMDb API)
+- react-hot-toast & lottie-react
+
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Nikhil-gna/MovieExplorer.git
+
+cd MovieExplorer
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
 ```
+
+### 3. Add Your API Key
+Create a `.env` file in the root directory and add your API key from RapidAPI:
+
+```
+VITE_RAPIDAPI_KEY=your_api_key_here
+VITE_RAPIDAPI_HOST=
+
+```
+
+### 4. Run the Development Server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+### 5. Build for Production
+```bash
+npm run build
+```
+
+---
+
+_Developed as a frontend assignment — May 31, 2025_
